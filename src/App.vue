@@ -1,19 +1,20 @@
 <template>
   <v-app>
-    <Navbar ></Navbar>
-    <v-content>
+    <Header></Header>
+    <v-content >
+     <router-view></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import Navbar from '@/components/App/Navbar'
+import Header from '@/components/Header/Header'
 
 export default {
   name: 'App',
 
   components: {
-    Navbar
+    Header
   },
 
   data: () => ({

@@ -8,15 +8,23 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
+    alias: '/home',
     component: Home
+  },
+  {
+    path: '/pivot',
+    name: 'Pivot',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Pivot.vue')
   },
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+     path: '/github',
+     name: 'github',
+     beforeEnter() {location.href = 'http://github.com'}
   }
 ]
 
